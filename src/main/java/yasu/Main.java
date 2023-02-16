@@ -21,6 +21,7 @@ public class Main {
                     .enableCache(CacheFlag.VOICE_STATE)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_WEBHOOKS, GatewayIntent.MESSAGE_CONTENT)
                     .addEventListeners(new CmdPlay())
+                    //.addEventListeners(new JDACommands())
                     .build().awaitReady(); // await.Ready() is really important for guild commands
 
             // Type of commands: Global commands and Guild Commands

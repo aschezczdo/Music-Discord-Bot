@@ -35,7 +35,7 @@ public class PlayerManager {
             return guildMusicManager;
         });
     }
-    public void loadAndPlay(TextChannel textChannel, String trackURL){
+        public void loadAndPlay(TextChannel textChannel, String trackURL){
         final GuildMusicManager musicManager = this.getMusicManager(textChannel.getGuild());
 
         this.audioPlayerManager.loadItemOrdered(musicManager, trackURL, new AudioLoadResultHandler() {
@@ -70,6 +70,7 @@ public class PlayerManager {
             }
         });
     }
+
     public static PlayerManager getINSTANCE(){
         if(INSTANCE == null){
             INSTANCE = new PlayerManager();

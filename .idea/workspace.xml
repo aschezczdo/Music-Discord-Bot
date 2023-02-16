@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="First Commit" />
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="First Commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/ExecuteArgs.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/ICommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/CmdPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/Listener.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,6 +21,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -59,6 +68,26 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="yasu.Main" />
+      <module name="MusicDiscordBot" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="yasu.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -73,7 +102,10 @@
       <workItem from="1676506096872" duration="297000" />
       <workItem from="1676516053480" duration="293000" />
       <workItem from="1676517303006" duration="8665000" />
-      <workItem from="1676525991329" duration="330000" />
+      <workItem from="1676525991329" duration="1248000" />
+      <workItem from="1676554133735" duration="4381000" />
+      <workItem from="1676560414094" duration="930000" />
+      <workItem from="1676579826851" duration="4912000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>

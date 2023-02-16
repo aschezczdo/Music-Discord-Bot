@@ -1,28 +1,32 @@
 package yasu.lavaplayer;
 
-import ca.tristan.jdacommands.ExecuteArgs;
-import ca.tristan.jdacommands.ICommand;
+import yasu.lavaplayer.ExecuteArgs;
 import net.dv8tion.jda.api.entities.*;
+import net.dv8tion.jda.api.entities.channel.Channel;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
 import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
+import net.dv8tion.jda.api.hooks.ListenerAdapter;
 import net.dv8tion.jda.api.managers.*;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-
 import javax.print.URIException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import net.dv8tion.jda.api.entities.channel.middleman.MessageChannel;
+import org.w3c.dom.Text;
+
 
 
 public class CmdPlay implements ICommand {
-    @Override
-    public void execute(ExecuteArgs event) {
+
+    public void execute (ExecuteArgs event) {
         Member member = event.getMember();
-        if(!member.getVoiceState().inAudioChannel()){
-            //event.getTextChannel().sendMessage("You");
+        if (!member.getVoiceState().inAudioChannel()) {
+            event.getChannel();
+
         }
-        if(!event.getSelfVoiceState().inAudioChannel()){
+        if (!event.getSelfVoiceState().inAudioChannel()) {
             final AudioManager audioManager = event.getGuild().getAudioManager();
             final VoiceChannel memberChannel = (VoiceChannel) event.getMemberVoiceState().getChannel();
 
@@ -30,31 +34,35 @@ public class CmdPlay implements ICommand {
         }
         String link = String.join(" ", event.getArgs());
 
-        if(!isUrl(link)){
+        if (!isUrl(link)) {
             link = "ytsearch" + link + " audio";
         }
-        //PlayerManager.getINSTANCE().loadAndPlay(event.getChannel(),link);
-        PlayerManager.getINSTANCE().loadAndPlay(Listener.getChannel(),link);
+        PlayerManager.getINSTANCE().loadAndPlay(event.getChannel() ,link);
+        //PlayerManager.getINSTANCE().loadAndPlay(Listener.getChannel(), link);
     }
-    public boolean isUrl(String url){
-        try{
+
+
+    public boolean isUrl(String url) {
+        try {
             new URI(url);
             return true;
-        }catch(URISyntaxException e){
+        } catch (URISyntaxException e) {
             return false;
         }
     }
 
     @Override
     public String getName() {
-        return null;
+        return "play";
     }
 
     @Override
     public String helpMessage() {
+
         return "This command is to play music ";
     }
-    public String error1(){
+
+    public String error1() {
         return "You have to be in a voice channel";
     }
 
@@ -63,3 +71,5 @@ public class CmdPlay implements ICommand {
         return false;
     }
 }
+
+
