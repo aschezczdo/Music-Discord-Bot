@@ -9,7 +9,7 @@ import java.awt.*;
 import java.util.ArrayList;
 
 public class Listener extends ListenerAdapter {
-
+    //USELESS CLASS FOR NOW.
     public static TextChannel getChannel(MessageReceivedEvent event) {
         return (TextChannel) event.getChannel();
     }
