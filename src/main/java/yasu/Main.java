@@ -22,7 +22,9 @@ public class Main {
                     .setStatus(OnlineStatus.ONLINE)
                     .enableCache(CacheFlag.VOICE_STATE)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_WEBHOOKS, GatewayIntent.MESSAGE_CONTENT)
+                    .enableCache(CacheFlag.VOICE_STATE)
                     .addEventListeners(new CommandManager() )
+                    .addEventListeners(new CmdPlay())
                     .build().awaitReady(); // await.Ready() is really important for guild commands
 
 
