@@ -35,6 +35,9 @@ public class CmdPlay extends ListenerAdapter {
         PlayerManager.getINSTANCE().loadAndPlay(textChannel,link);
 
         }
+        /*
+        This method might be used only if we want to do a searcher instead of adding url
+         */
     public boolean isUrl(String url) {
         try {
             new URI(url);
@@ -43,6 +46,7 @@ public class CmdPlay extends ListenerAdapter {
             return false;
         }
     }
+
     public String getName(){
         return "play";
     }

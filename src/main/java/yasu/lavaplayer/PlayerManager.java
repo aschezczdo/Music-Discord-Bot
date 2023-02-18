@@ -58,12 +58,11 @@ public class PlayerManager {
 
             @Override
             public void noMatches() {
-
             }
 
             @Override
             public void loadFailed(FriendlyException e) {
-
+            textChannel.sendMessage("Failed to load");
             }
         });
     }

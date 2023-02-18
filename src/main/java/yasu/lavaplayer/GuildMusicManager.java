@@ -32,6 +32,7 @@ public class GuildMusicManager {
     This method is used to send audio data to the voice channel
      */
     public AudioPlayerSendHandler getSendHandler() {
-         return this.sendHandler;
+
+        return this.sendHandler;
     }
 }
