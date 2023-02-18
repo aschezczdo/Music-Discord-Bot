@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="First Commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/ExecuteArgs.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/ICommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/CmdPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/Listener.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
-    </list>
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="First Commit" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,6 +98,9 @@
       <workItem from="1676554133735" duration="4381000" />
       <workItem from="1676560414094" duration="930000" />
       <workItem from="1676579826851" duration="4912000" />
+      <workItem from="1676687001292" duration="818000" />
+      <workItem from="1676687905987" duration="2820000" />
+      <workItem from="1676692846180" duration="1765000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>

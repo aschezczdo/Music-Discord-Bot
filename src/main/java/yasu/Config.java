@@ -1,4 +1,4 @@
-package yasu.lavaplayer;
+package yasu;
 
 import java.io.FileInputStream;
 import java.io.IOException;
