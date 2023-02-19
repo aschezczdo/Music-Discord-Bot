@@ -1,14 +1,10 @@
 package yasu.lavaplayer;
 
 import com.sedmelluq.discord.lavaplayer.player.*;
-import com.sedmelluq.discord.lavaplayer.player.event.AudioEvent;
 import com.sedmelluq.discord.lavaplayer.player.event.AudioEventAdapter;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackEndReason;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
-import org.w3c.dom.Text;
-
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 
@@ -33,15 +29,19 @@ public class TrackScheduler extends AudioEventAdapter {
             this.queue.offer(track);
         }
     }
+
     /*
     This method runs the following track in the queue.
     First it removes the current song from the queue using method .poll()
     Then it starts the track using the method .startTrack with false argument that means the current song gets interrupted to play the next one
      */
     public void nextTrack(){
+
         this.audioPlayer.startTrack(this.queue.poll(),false);
+        audioPlayer.getPlayingTrack();
     }
     public void pauseTrack(){
+
         this.audioPlayer.stopTrack();
     }
     public void setVolume(int i){

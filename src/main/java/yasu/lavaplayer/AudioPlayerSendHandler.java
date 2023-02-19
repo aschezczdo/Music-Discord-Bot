@@ -20,8 +20,9 @@ public class AudioPlayerSendHandler implements AudioSendHandler {
         this.frame.setBuffer(buffer); //Configuration of the frame. It means all audio-data sent will be stored on the ByteBuffer object
     }
     @Override
-    //Opus is a data-audio format.
+    //Opus is a data-audio format. Method checks if is Opus format.
     public boolean isOpus() {
+
         return true;
     }
 

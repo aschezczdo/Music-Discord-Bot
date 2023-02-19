@@ -5,22 +5,18 @@ import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
 
 /*
 The GuildMusicManager class is responsible for managing music playback on a particular Discord server.
-It has 3 attributes: audiplayer, scheduler and sendhandler
+It has 3 attributes: audioplayer, scheduler and sendhandler
  */
 public class GuildMusicManager {
     public final AudioPlayer audioPlayer; //AudiPlayer Object, responsible of playing the songs
     public final TrackScheduler scheduler; //TrackScheduler object, responsible of the queue of tracks
     private final AudioPlayerSendHandler sendHandler; // Responsible of sending the audio-data to a voice channel
-
-    /*
-    Constructor with 1 parameter. Parameter type AudioPlayerManeger from lavaplayer
-    Then
-     */
     /*
     TO CLARIFY:
     -AudioPlayer is a class that gives all the needed methods to play audio in a discord bot
     -AudioPlayerManager is a class that creates and manages instances of AudioPlayer
     */
+    //Constructor with one parameter. 4 Attributes
     public GuildMusicManager(AudioPlayerManager manager){ //Class from the lavaplayer library
         this.audioPlayer = manager.createPlayer(); //Creating the AudioPlayer
         this.scheduler = new TrackScheduler(audioPlayer); //Creating scheduler variable
