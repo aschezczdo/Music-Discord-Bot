@@ -9,7 +9,8 @@ public class Config {
 
     static {
         try {
-            properties.load(new FileInputStream("C:/Users/Administrator/Desktop/Java Projects/discordapikey.properties"));
+            properties.load(new FileInputStream("config.properties"));
+
         } catch (IOException e) {
             e.printStackTrace();
         }

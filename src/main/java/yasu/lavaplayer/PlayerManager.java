@@ -53,7 +53,6 @@ public class PlayerManager {
             public void trackLoaded(AudioTrack audioTrack) {
                 musicManager.scheduler.queue(audioTrack);
                 textChannel.sendMessage("Adding to queue: " + audioTrack.getInfo().title + " **by ** " +audioTrack.getInfo().author).queue();
-
             }
 
             @Override
