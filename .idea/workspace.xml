@@ -11,7 +11,7 @@
   <component name="ChangeListManager">
     <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +118,8 @@
       <workItem from="1676921282784" duration="25377000" />
       <workItem from="1677013617629" duration="198000" />
       <workItem from="1677016035163" duration="374000" />
-      <workItem from="1677016529584" duration="489000" />
+      <workItem from="1677016529584" duration="552000" />
+      <workItem from="1677017186589" duration="1312000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -218,7 +219,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677016563928</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677017022237</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1677017022237</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

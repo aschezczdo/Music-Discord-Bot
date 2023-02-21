@@ -35,7 +35,6 @@ public class CommandManager extends ListenerAdapter {
             event.deferReply().queue();
             trackScheduler.nextTrack();
             StringBuilder sb = new StringBuilder(); //Building the message
-            for(int i = 0; i < tracks.size(); i++){
                 AudioTrack track = tracks.get(1); //Getting info of track 1 from list
                 AudioTrackInfo info = track.getInfo(); //Getting info
                 sb.append("**Next track:** ");
@@ -44,7 +43,6 @@ public class CommandManager extends ListenerAdapter {
                 sb.append(" by ");
                 sb.append(info.author);
                 sb.append("```");
-            }
             event.getHook().sendMessage(sb.toString()).queue();
         } else if (event.getFullCommandName().contains("pause")) {
             event.deferReply().queue();
