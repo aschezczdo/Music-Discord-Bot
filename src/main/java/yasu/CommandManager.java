@@ -78,6 +78,9 @@ public class CommandManager extends ListenerAdapter {
             trackScheduler.clearQueue();
             event.getGuild().getAudioManager().closeAudioConnection();
             event.reply("Bot had disconnected from VC").queue();
+        }else if(event.getFullCommandName().contains("resume")){
+            trackScheduler.resumeTrack();
+            event.reply("Track had been resumed").queue();
         }
     }
 
@@ -94,6 +97,7 @@ public class CommandManager extends ListenerAdapter {
         commandList.add(Commands.slash("queue", "List all tracks in queue"));
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
         commandList.add(Commands.slash("disconnect","disconnect bot from the VC"));
+        commandList.add(Commands.slash("resume","Resume the track"));
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();
 

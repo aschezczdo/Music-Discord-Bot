@@ -2,11 +2,11 @@ Simple Discord Bot made in Java.
 
 This bot had been developed with JDA 5.0.
 
-It has some AudioPlayer commands such as:
-/play <URL> --> Play a song in a Voice Channel.
-/next play next track
-/volume set the volume of the AudioPlayer. 
-/pause pause the current track
+It has some Music Commands such as:
+/Play <url> --> Play any track. It automatically add it to a queue if there're already any track being played
+/Skip --> Skip to the next track
+/Disconnect --> Disconnect bot from any VC
+/Pause -->
 
 I'll add some other commands in future releases. Commands such as: OnTrackInfo (tittle, duration etc) and some other useful commands!
 
