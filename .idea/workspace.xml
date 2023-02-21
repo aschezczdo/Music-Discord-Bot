@@ -9,8 +9,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CmdPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +116,10 @@
       <workItem from="1676865571874" duration="584000" />
       <workItem from="1676866165537" duration="441000" />
       <workItem from="1676866802949" duration="167000" />
-      <workItem from="1676867988031" duration="219000" />
+      <workItem from="1676867988031" duration="238000" />
+      <workItem from="1676907804074" duration="3302000" />
+      <workItem from="1676913941473" duration="1932000" />
+      <workItem from="1676921282784" duration="23297000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -141,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676868091393</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Updated readme">
+      <created>1676868213028</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1676868213028</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -150,6 +165,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="First Commit" />
     <MESSAGE value="Updated readme" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated readme" />
+    <MESSAGE value="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands" />
   </component>
 </project>

@@ -2,6 +2,10 @@ package yasu.lavaplayer;
 
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.player.AudioPlayerManager;
+import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 The GuildMusicManager class is responsible for managing music playback on a particular Discord server.
@@ -22,6 +26,10 @@ public class GuildMusicManager {
         this.scheduler = new TrackScheduler(audioPlayer); //Creating scheduler variable
         this.audioPlayer.addListener(scheduler); //Setting scheduler as listener. It listens for "onTrackEnd" of AudioPlayer
         this.sendHandler = new AudioPlayerSendHandler(this.audioPlayer);
+    }
+    public List<AudioTrack> getQueue() {
+        List <AudioTrack> playlist = new ArrayList<>(scheduler.queue);
+        return playlist;
     }
     /*
     Returns sendHandler.
