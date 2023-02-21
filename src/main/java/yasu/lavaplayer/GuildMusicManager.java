@@ -27,10 +27,6 @@ public class GuildMusicManager {
         this.audioPlayer.addListener(scheduler); //Setting scheduler as listener. It listens for "onTrackEnd" of AudioPlayer
         this.sendHandler = new AudioPlayerSendHandler(this.audioPlayer);
     }
-    public List<AudioTrack> getQueue() {
-        List <AudioTrack> playlist = new ArrayList<>(scheduler.queue);
-        return playlist;
-    }
     /*
     Returns sendHandler.
     This method is used to send audio data to the voice channel

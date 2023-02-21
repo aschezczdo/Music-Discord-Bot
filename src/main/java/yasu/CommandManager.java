@@ -33,33 +33,38 @@ public class CommandManager extends ListenerAdapter {
 
         if (event.getFullCommandName().contains("skip")) {
             event.deferReply().queue();
-            trackScheduler.nextTrack();
+            trackScheduler.skipTrack(event);
             StringBuilder sb = new StringBuilder(); //Building the message
-                AudioTrack track = tracks.get(1); //Getting info of track 1 from list
-                AudioTrackInfo info = track.getInfo(); //Getting info
-                sb.append("**Next track:** ");
-                sb.append("```");
-                sb.append(info.title);
-                sb.append(" by ");
-                sb.append(info.author);
-                sb.append("```");
+            AudioTrack track = tracks.get(1); //Getting info of track 1 from list
+            AudioTrackInfo info = track.getInfo(); //Getting info
+            sb.append("**Next track:** ");
+            sb.append("```");
+            sb.append(info.title);
+            sb.append(" by ");
+            sb.append(info.author);
+            sb.append("```");
             event.getHook().sendMessage(sb.toString()).queue();
         } else if (event.getFullCommandName().contains("pause")) {
             event.deferReply().queue();
             trackScheduler.pauseTrack();
             event.getHook().sendMessage("Track had been paused").queue();
-        }else if(event.getName().equals("resume")){
+        } else if (event.getName().equals("resume")) {
             event.deferReply().queue();
             trackScheduler.resumeTrack();
             event.getHook().sendMessage("Track had been resumed!").queue();
-        }else if (event.getFullCommandName().contains("volume")) {
+        } else if (event.getFullCommandName().contains("volume")) {
             event.deferReply().queue();
             List<OptionMapping> option2 = event.getOptions();
             int volume = option2.get(0).getAsInt(); //Option typed by the user. Have to be an int
             int currentvolume = trackScheduler.getVolume();
-            trackScheduler.setVolume(volume);
-            event.getHook().sendMessage("```Current volume: " + currentvolume + "```" + "```Modified Volume: " + volume + "```").queue();
-            trackScheduler.setVolume(volume);
+            if (volume <= 100 && volume >= 0) {
+                trackScheduler.setVolume(volume);
+                event.getHook().sendMessage("```Current volume: " + currentvolume + "```" + "```Modified Volume: " + volume + "```").queue();
+                trackScheduler.setVolume(volume);
+            } else {
+                event.getHook().sendMessage("Volume must be between 0-100").queue();
+            }
+
         } else if (event.getFullCommandName().contains("queue")) {
             event.deferReply().queue();
             StringBuilder sb = new StringBuilder(); //Calling StringBuilder object to make the output readable.
@@ -74,20 +79,18 @@ public class CommandManager extends ListenerAdapter {
             event.deferReply().queue();
             trackScheduler.clearQueue();
             event.getHook().sendMessage("Queue had been succesfully clear!").queue();
-        }else if(event.getFullCommandName().contains("disconnect")){
+        } else if (event.getFullCommandName().contains("disconnect")) {
             event.deferReply().queue();
             trackScheduler.clearQueue();
             event.getGuild().getAudioManager().closeAudioConnection();
-            event.getHook().sendMessage("Bot had disconnected from VC").queue();
-        }else if(event.getFullCommandName().contains("resume")){
-            event.deferReply().queue();;
+            event.getHook().sendMessage("Bot had been disconnected from VC").queue();
+        } else if (event.getFullCommandName().contains("resume")) {
+            event.deferReply().queue();
+            ;
             trackScheduler.resumeTrack();
             event.reply("Track had been resumed").queue();
-        }else if(event.getFullCommandName().contains("playingnow")){
-            event.deferReply();
-            trackScheduler.playingNow();
-            event.getHook().sendMessage("**Track being played: **" + trackScheduler.playingNow());
         }
+
     }
 
     public void onGuildReady(GuildReadyEvent event) {
@@ -102,9 +105,9 @@ public class CommandManager extends ListenerAdapter {
         commandList.add(Commands.slash("volume", "set a volume!").addOptions(option2));
         commandList.add(Commands.slash("queue", "List all tracks in queue"));
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
-        commandList.add(Commands.slash("disconnect","disconnect bot from the VC"));
-        commandList.add(Commands.slash("resume","Resume the track"));
-        commandList.add(Commands.slash("playingnow","Shows track that is playing now"));
+        commandList.add(Commands.slash("disconnect", "disconnect bot from the VC"));
+        commandList.add(Commands.slash("resume", "Resume the track"));
+        //commandList.add(Commands.slash("playingnow","Shows track that is playing now")); PENDING TO ADD
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();
 

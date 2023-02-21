@@ -81,8 +81,6 @@ public class PlayerManager {
                     event.getHook().sendMessage("Adding to queue: " + tracks.get(0).getInfo().title + " **by ** " + tracks.get(0).getInfo().author).queue();
                 }
             }
-
-
             @Override
             public void noMatches() {
 

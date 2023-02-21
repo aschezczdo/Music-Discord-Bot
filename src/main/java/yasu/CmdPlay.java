@@ -26,7 +26,6 @@ public class CmdPlay extends ListenerAdapter {
         if (!event.getName().equals("play")) { //Checking if event = "play"
             return; //If not, we ignore
         }
-        event.deferReply();
             Guild guild = event.getGuild();
             if (!event.getMember().getVoiceState().inAudioChannel()) { //Checks if use its in a voice channel
                 event.reply("You need to be in a voice channel to use this command").queue();
