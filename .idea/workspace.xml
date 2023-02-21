@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" afterDir="false" />
     </list>
@@ -115,7 +115,8 @@
       <workItem from="1676867988031" duration="238000" />
       <workItem from="1676907804074" duration="3302000" />
       <workItem from="1676913941473" duration="1932000" />
-      <workItem from="1676921282784" duration="25100000" />
+      <workItem from="1676921282784" duration="25377000" />
+      <workItem from="1677013617629" duration="107000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -187,7 +188,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677011123347</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677011959095</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1677011959095</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
