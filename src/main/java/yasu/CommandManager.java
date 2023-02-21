@@ -101,6 +101,7 @@ public class CommandManager extends ListenerAdapter {
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
         commandList.add(Commands.slash("disconnect","disconnect bot from the VC"));
         commandList.add(Commands.slash("resume","Resume the track"));
+        commandList.add(Commands.slash("playingnow","Shows track that is playing now"));
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();
 
