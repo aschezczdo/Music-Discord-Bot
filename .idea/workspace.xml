@@ -118,7 +118,7 @@
       <workItem from="1676921282784" duration="25377000" />
       <workItem from="1677013617629" duration="198000" />
       <workItem from="1677016035163" duration="374000" />
-      <workItem from="1677016529584" duration="29000" />
+      <workItem from="1677016529584" duration="489000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -211,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677016212663</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677016563928</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1677016563928</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
