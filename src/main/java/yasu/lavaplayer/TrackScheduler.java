@@ -71,6 +71,16 @@ public class    TrackScheduler extends AudioEventAdapter {
             audioPlayer.setPaused(false);  //If there are already a track, it just setPause as false, so it continue;
         }
    }
+    public String playingNow() {
+        AudioTrack track = audioPlayer.getPlayingTrack();
+        if (track != null) {
+            String track_title = track.getInfo().title;
+            return track_title;
+        } else {
+            return null;
+        }
+    }
+
     @Override
     //This method will be called when a track is about to end from the AudioEventAdapter class
     public void onTrackEnd(AudioPlayer player, AudioTrack track, AudioTrackEndReason endReason) {

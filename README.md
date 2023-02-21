@@ -11,7 +11,9 @@ It has some Music Commands such as:
 * /Clear --> Clear the tracks on queue
 * /volume <Int Value> --> Set the volume of the audioplayer. Value from 0-10
 * /queue --> Shows the tracks in queue
+* /playingnow --> Shows the track that is being played
 I'll add some other commands in future releases. 
+* 
 
 `--HOW TO SETUP--`
 1. Download the .jar from releases 

@@ -81,6 +81,9 @@ public class CommandManager extends ListenerAdapter {
         }else if(event.getFullCommandName().contains("resume")){
             trackScheduler.resumeTrack();
             event.reply("Track had been resumed").queue();
+        }else if(event.getFullCommandName().contains("playingnow")){
+            trackScheduler.playingNow();
+            event.reply("**Track being played: **" + trackScheduler.playingNow());
         }
     }
 

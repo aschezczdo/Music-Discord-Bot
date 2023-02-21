@@ -11,8 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +116,7 @@
       <workItem from="1676867988031" duration="238000" />
       <workItem from="1676907804074" duration="3302000" />
       <workItem from="1676913941473" duration="1932000" />
-      <workItem from="1676921282784" duration="23540000" />
+      <workItem from="1676921282784" duration="24216000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -160,7 +160,28 @@
       <option name="project" value="LOCAL" />
       <updated>1677010151377</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677010397479</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1677010397479</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677010520176</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1677010520176</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677010554060</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1677010554060</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
