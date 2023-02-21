@@ -73,19 +73,22 @@ public class CommandManager extends ListenerAdapter {
             }
             event.getHook().sendMessage(sb.toString()).queue();
         } else if (event.getFullCommandName().contains("clear")) {
-            event.deferReply();
+            event.deferReply().queue();
             trackScheduler.clearQueue();
             event.getHook().sendMessage("Queue had been succesfully clear!").queue();
         }else if(event.getFullCommandName().contains("disconnect")){
+            event.deferReply().queue();
             trackScheduler.clearQueue();
             event.getGuild().getAudioManager().closeAudioConnection();
-            event.reply("Bot had disconnected from VC").queue();
+            event.getHook().sendMessage("Bot had disconnected from VC").queue();
         }else if(event.getFullCommandName().contains("resume")){
+            event.deferReply().queue();;
             trackScheduler.resumeTrack();
             event.reply("Track had been resumed").queue();
         }else if(event.getFullCommandName().contains("playingnow")){
+            event.deferReply();
             trackScheduler.playingNow();
-            event.reply("**Track being played: **" + trackScheduler.playingNow());
+            event.getHook().sendMessage("**Track being played: **" + trackScheduler.playingNow());
         }
     }
 
