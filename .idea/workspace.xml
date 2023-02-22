@@ -11,8 +11,10 @@
   <component name="ChangeListManager">
     <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +34,11 @@
       <list>
         <option value="yasu" />
       </list>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -75,7 +82,7 @@
       <module name="MusicDiscordBot" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="yasu.*" />
+          <option name="PATTERN" value="yasu.MusicCommands.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -124,7 +131,7 @@
       <workItem from="1677023242300" duration="854000" />
       <workItem from="1677024129446" duration="1504000" />
       <workItem from="1677064234249" duration="741000" />
-      <workItem from="1677064988659" duration="7127000" />
+      <workItem from="1677064988659" duration="8199000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -252,7 +259,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677071738501</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Updated bot to 1.0.1&#10;&#10;Fixed some bugs">
+      <created>1677076183062</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1677076183062</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -273,6 +287,7 @@
     <MESSAGE value="First Commit" />
     <MESSAGE value="Updated readme" />
     <MESSAGE value="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands" />
+    <MESSAGE value="Updated bot to 1.0.1&#10;&#10;Fixed some bugs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Updated bot to 1.0.1&#10;&#10;Fixed some bugs" />
   </component>
 </project>
