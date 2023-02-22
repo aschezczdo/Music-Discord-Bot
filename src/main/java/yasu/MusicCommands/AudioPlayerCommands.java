@@ -24,18 +24,24 @@ public class AudioPlayerCommands extends ListenerAdapter {
         PlayerManager playerManager = PlayerManager.getINSTANCE();
 
         if (event.getFullCommandName().contains("skip")) {
-            event.deferReply().queue();
-            event.reply("Thinking about the next track...").queue();
-            trackScheduler.skipTrack(event);
             StringBuilder sb = new StringBuilder(); //Building the message
-            AudioTrack track = tracks.get(1); //Getting info of track 1 from list
-            AudioTrackInfo info = track.getInfo(); //Getting info
-            sb.append("**Next track:** ");
-            sb.append("```");
-            sb.append(info.title);
-            sb.append(" by ");
-            sb.append(info.author);
-            sb.append("```");
+            event.deferReply().queue();
+            if(!tracks.isEmpty()){
+                AudioTrack track = tracks.get(1); //Getting info of track 1 from list
+                AudioTrackInfo info = track.getInfo(); //Getting info
+                trackScheduler.skipTrack(event);
+                sb.append("**Next track:** ");
+                sb.append("```");
+                sb.append(info.title);
+                sb.append(" by ");
+                sb.append(info.author);
+                sb.append("```");
+                event.getHook().sendMessage(sb.toString()).queue();
+                event.getHook().sendMessage(sb.toString()).queue();
+
+            }else{
+                event.getHook().sendMessage("**Queue is empty. There aren't tracks to play").queue();
+            }
             event.getHook().sendMessage(sb.toString()).queue();
         } else if (event.getFullCommandName().contains("playpause")) {
             event.deferReply().queue();
