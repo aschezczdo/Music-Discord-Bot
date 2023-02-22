@@ -11,11 +11,8 @@
   <component name="ChangeListManager">
     <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CmdPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/CommandManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -125,7 +122,10 @@
       <workItem from="1677016035163" duration="374000" />
       <workItem from="1677016529584" duration="552000" />
       <workItem from="1677017186589" duration="4585000" />
-      <workItem from="1677023242300" duration="534000" />
+      <workItem from="1677023242300" duration="854000" />
+      <workItem from="1677024129446" duration="1504000" />
+      <workItem from="1677064234249" duration="741000" />
+      <workItem from="1677064988659" duration="3940000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -239,7 +239,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677018504891</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Updated bot to 1.0.0&#10;&#10;Fixed some bugs &amp; added some commands">
+      <created>1677023784074</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1677023784074</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -80,6 +80,11 @@ public class    TrackScheduler extends AudioEventAdapter {
     public void clearQueue() {
         this.queue.clear();
     }
+    public String playingNow(){
+        AudioTrack track = this.audioPlayer.getPlayingTrack();
+        String playingTrack = track.getInfo().title;
+        return playingTrack;
+    }
 
     public void resumeTrack() {
         this.audioPlayer.setPaused(false);  //If there are already a track, it just setPause as false, so it continue;
