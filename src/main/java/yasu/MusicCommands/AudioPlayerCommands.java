@@ -40,7 +40,7 @@ public class AudioPlayerCommands extends ListenerAdapter {
                 event.getHook().sendMessage(sb.toString()).queue();
 
             }else{
-                event.getHook().sendMessage("**Queue is empty. There aren't tracks to play").queue();
+                event.getHook().sendMessage("**Queue is empty. There aren't tracks to play**").queue();
             }
             event.getHook().sendMessage(sb.toString()).queue();
         } else if (event.getFullCommandName().contains("playpause")) {
