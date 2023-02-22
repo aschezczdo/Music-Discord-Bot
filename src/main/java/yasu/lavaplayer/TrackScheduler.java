@@ -57,11 +57,6 @@ public class    TrackScheduler extends AudioEventAdapter {
         event.getHook();
     }
 
-    public void pauseTrack() {
-
-        this.audioPlayer.stopTrack();
-    }
-
     public void setVolume(int i) {
         if (i > 0 && i < 100) {
             this.audioPlayer.setVolume(i);

@@ -45,16 +45,18 @@ public class CommandManager extends ListenerAdapter {
             sb.append(info.author);
             sb.append("```");
             event.getHook().sendMessage(sb.toString()).queue();
-        } else if (event.getFullCommandName().contains("pause")) {
+        } else if (event.getFullCommandName().contains("playpause")) {
             event.deferReply().queue();
             event.reply("Getting current track paused.").queue();
-            trackScheduler.pauseTrack();
+            if(trackScheduler.audioPlayer.isPaused()){
+                trackScheduler.audioPlayer.setPaused(false);
+                event.getHook().sendMessage("Your track had been resumed").queue();
+            }else{
+                trackScheduler.audioPlayer.setPaused(true);
+                event.getHook().sendMessage("Yous track had been paused").queue();
+
+            }
             event.getHook().sendMessage("Track had been paused").queue();
-        } else if (event.getName().equals("resume")) {
-            event.deferReply().queue();
-            event.reply("Resuming ur track...").queue();
-            trackScheduler.resumeTrack();
-            event.getHook().sendMessage("Track had been resumed!").queue();
         } else if (event.getFullCommandName().contains("volume")) {
             event.deferReply().queue();
             List<OptionMapping> option2 = event.getOptions();
@@ -62,7 +64,7 @@ public class CommandManager extends ListenerAdapter {
                 volume = option2.get(0).getAsInt();
             int currentvolume = trackScheduler.getVolume();
             if (volume <= 100 && volume >= 0) {
-                event.reply(("Changin the volume...")).queue();
+                event.reply(("Changing the volume...")).queue();
                 trackScheduler.setVolume(volume);
                 event.getHook().sendMessage("```Current volume: " + currentvolume + "```" + "```Modified Volume: " + volume + "```").queue();
                 trackScheduler.setVolume(volume);
@@ -89,10 +91,6 @@ public class CommandManager extends ListenerAdapter {
             trackScheduler.clearQueue();
             event.getGuild().getAudioManager().closeAudioConnection();
             event.getHook().sendMessage("Bot had been disconnected from VC").queue();
-        } else if (event.getFullCommandName().contains("resume")) {
-            event.deferReply().queue();
-            trackScheduler.resumeTrack();
-            event.reply("Track had been resumed").queue();
         }else if(event.getFullCommandName().contains("playingnow")){
             event.reply("**Playing now: **" + trackScheduler.playingNow()).queue();
 
@@ -107,13 +105,12 @@ public class CommandManager extends ListenerAdapter {
         OptionData option1 = new OptionData(OptionType.STRING, "song", "link your song", true);
         commandList.add(Commands.slash("play", "Play a song").addOptions(option1));
         commandList.add(Commands.slash("skip", "Skip the current song"));
-        commandList.add(Commands.slash("pause", "Pause the current track"));
+        commandList.add(Commands.slash("playpause", "Play / Pause the current track"));
         OptionData option2 = new OptionData(OptionType.INTEGER, "volume", "Set the volume of the bot. 0-100", true);
         commandList.add(Commands.slash("volume", "set a volume!").addOptions(option2));
         commandList.add(Commands.slash("queue", "List all tracks in queue"));
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
         commandList.add(Commands.slash("disconnect", "disconnect bot from the VC"));
-        commandList.add(Commands.slash("resume", "Resume the track"));
         commandList.add(Commands.slash("playingnow","Shows track that is playing now"));
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();

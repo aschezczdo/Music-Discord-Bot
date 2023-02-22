@@ -1,11 +1,6 @@
 package yasu;
 
-import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
-import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
-import net.dv8tion.jda.annotations.ForRemoval;
-import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
-import net.dv8tion.jda.api.entities.GuildVoiceState;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.entities.channel.concrete.VoiceChannel;
 import net.dv8tion.jda.api.events.guild.voice.GuildVoiceUpdateEvent;
@@ -17,7 +12,6 @@ import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
 import java.util.List;
 import java.util.Objects;
-
 
 
 public class CmdPlay extends ListenerAdapter {
