@@ -9,6 +9,8 @@ import net.dv8tion.jda.api.OnlineStatus;
 import net.dv8tion.jda.api.entities.Activity;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import net.dv8tion.jda.api.utils.cache.CacheFlag;
+import yasu.MusicCommands.AudioPlayerCommands;
+import yasu.MusicCommands.CmdPlay;
 //import yasu.lavaplayer.CmdPlay;
 
 
@@ -23,7 +25,7 @@ public class Main {
                     .enableCache(CacheFlag.VOICE_STATE)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_WEBHOOKS, GatewayIntent.MESSAGE_CONTENT)
                     .enableCache(CacheFlag.VOICE_STATE)
-                    .addEventListeners(new CommandManager() )
+                    .addEventListeners(new AudioPlayerCommands() )
                     .addEventListeners(new CmdPlay())
                     .build().awaitReady(); // await.Ready() is really important for guild commands
 

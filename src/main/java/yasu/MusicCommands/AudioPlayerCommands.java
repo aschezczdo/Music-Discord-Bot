@@ -1,10 +1,7 @@
-package yasu;
+package yasu.MusicCommands;
 
-import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
-import net.dv8tion.jda.api.entities.Message;
-import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -13,18 +10,13 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
-import org.w3c.dom.Text;
-import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.sedmelluq.discord.lavaplayer.container.matroska.format.MatroskaElementType.Audio;
-import static com.sedmelluq.discord.lavaplayer.container.matroska.format.MatroskaElementType.Tracks;
-
-public class CommandManager extends ListenerAdapter {
+public class AudioPlayerCommands extends ListenerAdapter {
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         //To work with anything from audioplayer we have to call the Instance, then the GuildMusicManager to get the Object of that guild associated with that text channel where command had been sent.
         List<AudioTrack> tracks = PlayerManager.getINSTANCE().getMusicManager(event.getGuild()).scheduler.getQueue(); //Variable list type tracks that stores all tracks in the queue. (We call getQueue() method to get the queue. Class from TrackScheduler)
