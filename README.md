@@ -6,8 +6,7 @@ It has some Music Commands such as:
 * /Play <url> --> Play any track. It automatically add it to a queue if there're already any track being played
 * /Skip --> Skip to the next track
 * /Disconnect --> Disconnect bot from any VC
-* /Pause --> Pause the current track
-* /Resume --> Continue the current track
+* /Playpause --> Play / Pause the current track
 * /Clear --> Clear the tracks on queue
 * /volume <Int Value> --> Set the volume of the audioplayer. Value from 0-10
 * /queue --> Shows the tracks in queue
