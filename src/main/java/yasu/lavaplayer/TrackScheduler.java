@@ -50,13 +50,6 @@ public class    TrackScheduler extends AudioEventAdapter {
         audioPlayer.getPlayingTrack();
     }
 
-    public void skipTrack(SlashCommandInteractionEvent event) {
-        event.deferReply();
-        this.audioPlayer.startTrack(this.queue.poll(), false);
-        audioPlayer.getPlayingTrack();
-        event.getHook();
-    }
-
     public void setVolume(int i) {
         if (i > 0 && i < 100) {
             this.audioPlayer.setVolume(i);

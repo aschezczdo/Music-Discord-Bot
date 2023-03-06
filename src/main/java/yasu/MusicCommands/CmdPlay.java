@@ -35,8 +35,7 @@ public class CmdPlay extends ListenerAdapter {
 
             TextChannel textChannel = event.getChannel().asTextChannel();
             PlayerManager.getINSTANCE().loadAndPlay(textChannel, link,event); //We load the link provided to the loadAndPlay method
-
-
+        // m -> bot.getPlayerManager().loadItemOrdered(event.getGuild(), searchPrefix + event.getArgs(), new ResultHandler(m,event))); --> to search function(?)
     }
 
     //Auto disconnects bot if it's alone

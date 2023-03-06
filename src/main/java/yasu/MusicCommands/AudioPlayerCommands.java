@@ -1,7 +1,10 @@
 package yasu.MusicCommands;
 
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
+import net.dv8tion.jda.api.entities.GuildVoiceState;
+import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.events.guild.GuildReadyEvent;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
@@ -10,6 +13,7 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
 
@@ -22,34 +26,13 @@ public class AudioPlayerCommands extends ListenerAdapter {
         List<AudioTrack> tracks = PlayerManager.getINSTANCE().getMusicManager(event.getGuild()).scheduler.getQueue(); //Variable list type tracks that stores all tracks in the queue. (We call getQueue() method to get the queue. Class from TrackScheduler)
         TrackScheduler trackScheduler = PlayerManager.getINSTANCE().getMusicManager(event.getGuild()).scheduler; //We initialize trackScheduler object to be able to work with the methods of this class.
         PlayerManager playerManager = PlayerManager.getINSTANCE();
-
-        if (event.getFullCommandName().contains("skip")) {
-            StringBuilder sb = new StringBuilder(); //Building the message
-            event.deferReply().queue();
-            if(!tracks.isEmpty()){
-                AudioTrack track = tracks.get(1); //Getting info of track 1 from list
-                AudioTrackInfo info = track.getInfo(); //Getting info
-                trackScheduler.skipTrack(event);
-                sb.append("**Next track:** ");
-                sb.append("```");
-                sb.append(info.title);
-                sb.append(" by ");
-                sb.append(info.author);
-                sb.append("```");
-                event.getHook().sendMessage(sb.toString()).queue();
-                event.getHook().sendMessage(sb.toString()).queue();
-
-            }else{
-                event.getHook().sendMessage("**Queue is empty. There aren't tracks to play**").queue();
-            }
-            event.getHook().sendMessage(sb.toString()).queue();
-        } else if (event.getFullCommandName().contains("playpause")) {
+        if (event.getFullCommandName().contains("playpause")) {
             event.deferReply().queue();
             event.reply("Getting current track paused.").queue();
-            if(trackScheduler.audioPlayer.isPaused()){
+            if (trackScheduler.audioPlayer.isPaused()) {
                 trackScheduler.audioPlayer.setPaused(false);
                 event.getHook().sendMessage("Your track had been resumed").queue();
-            }else{
+            } else {
                 trackScheduler.audioPlayer.setPaused(true);
                 event.getHook().sendMessage("Yous track had been paused").queue();
 
@@ -59,7 +42,7 @@ public class AudioPlayerCommands extends ListenerAdapter {
             event.deferReply().queue();
             List<OptionMapping> option2 = event.getOptions();
             int volume = 0;
-                volume = option2.get(0).getAsInt();
+            volume = option2.get(0).getAsInt();
             int currentvolume = trackScheduler.getVolume();
             if (volume <= 100 && volume >= 0) {
                 event.reply(("Changing the volume...")).queue();
@@ -89,7 +72,7 @@ public class AudioPlayerCommands extends ListenerAdapter {
             trackScheduler.clearQueue();
             event.getGuild().getAudioManager().closeAudioConnection();
             event.getHook().sendMessage("Bot had been disconnected from VC").queue();
-        }else if(event.getFullCommandName().contains("playingnow")){
+        } else if (event.getFullCommandName().contains("playingnow")) {
             event.reply("**Playing now: **" + trackScheduler.playingNow()).queue();
 
         }
@@ -109,7 +92,7 @@ public class AudioPlayerCommands extends ListenerAdapter {
         commandList.add(Commands.slash("queue", "List all tracks in queue"));
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
         commandList.add(Commands.slash("disconnect", "disconnect bot from the VC"));
-        commandList.add(Commands.slash("playingnow","Shows track that is playing now"));
+        commandList.add(Commands.slash("playingnow", "Shows track that is playing now"));
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();
 
