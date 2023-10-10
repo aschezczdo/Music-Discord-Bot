@@ -12,16 +12,21 @@ import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
 import java.util.List;
 import java.util.Objects;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class CmdPlay extends ListenerAdapter {
+    //private static final Logger logger = LoggerFactory.getLogger(CmdPlay.class);
 
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) { //Listens for all "/" events
+        //logger.info("Received SlashCommandInteractionEvent: " + event.getName());
         if (!event.getName().equals("play")) { //Checking if event = "play"
             return; //If not, we ignore
         }
+        event.deferReply().queue();
             Guild guild = event.getGuild();
             if (!event.getMember().getVoiceState().inAudioChannel()) { //Checks if use its in a voice channel
+                //logger.warn("Member not in voice channel.");
                 event.reply("You need to be in a voice channel to use this command").queue();
                 return;
             }

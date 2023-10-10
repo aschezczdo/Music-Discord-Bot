@@ -16,39 +16,46 @@ import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
 public class AudioPlayerCommands extends ListenerAdapter {
+    //private static final Logger logger = LoggerFactory.getLogger(AudioPlayerCommands.class);
+
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
+        //logger.info("Received SlashCommandInteractionEvent for AudioPlayerCommands: " + event.getFullCommandName());
         //To work with anything from audioplayer we have to call the Instance, then the GuildMusicManager to get the Object of that guild associated with that text channel where command had been sent.
         List<AudioTrack> tracks = PlayerManager.getINSTANCE().getMusicManager(event.getGuild()).scheduler.getQueue(); //Variable list type tracks that stores all tracks in the queue. (We call getQueue() method to get the queue. Class from TrackScheduler)
         TrackScheduler trackScheduler = PlayerManager.getINSTANCE().getMusicManager(event.getGuild()).scheduler; //We initialize trackScheduler object to be able to work with the methods of this class.
         PlayerManager playerManager = PlayerManager.getINSTANCE();
         if (event.getFullCommandName().contains("playpause")) {
             event.deferReply().queue();
-            event.reply("Getting current track paused.").queue();
+            //logger.info("Processing play/pause command.");
             if (trackScheduler.audioPlayer.isPaused()) {
                 trackScheduler.audioPlayer.setPaused(false);
-                event.getHook().sendMessage("Your track had been resumed").queue();
+                event.getHook().sendMessage("Track had been resumed").queue();
             } else {
                 trackScheduler.audioPlayer.setPaused(true);
-                event.getHook().sendMessage("Yous track had been paused").queue();
+                event.getHook().sendMessage("Track had been paused").queue();
 
             }
-            event.getHook().sendMessage("Track had been paused").queue();
         } else if (event.getFullCommandName().contains("volume")) {
             event.deferReply().queue();
+            //logger.info("Processing volume command.");
             List<OptionMapping> option2 = event.getOptions();
             int volume = 0;
+            if(option2 == null || option2.isEmpty()){
+                event.getHook().sendMessage("Volume value missing.").queue();
+                return;
+            }
             volume = option2.get(0).getAsInt();
             int currentvolume = trackScheduler.getVolume();
             if (volume <= 100 && volume >= 0) {
                 event.reply(("Changing the volume...")).queue();
                 trackScheduler.setVolume(volume);
                 event.getHook().sendMessage("```Current volume: " + currentvolume + "```" + "```Modified Volume: " + volume + "```").queue();
-                trackScheduler.setVolume(volume);
             } else {
                 event.getHook().sendMessage("Volume must be between 0-100").queue();
             }
@@ -63,7 +70,6 @@ public class AudioPlayerCommands extends ListenerAdapter {
             }
             event.getHook().sendMessage(sb.toString()).queue();
         } else if (event.getFullCommandName().contains("clear")) {
-            event.deferReply().queue();
             event.reply("Removing tracks").queue();
             trackScheduler.clearQueue();
             event.getHook().sendMessage("Queue had been succesfully clear!").queue();

@@ -12,6 +12,9 @@ import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 
 import java.util.HashMap;
 import java.util.List;
@@ -26,14 +29,18 @@ public class PlayerManager {
     private final Map<Long, GuildMusicManager> musicManagers; //Maps each guild to the corresponding "GuildMusicManager" Object. (GuildMusicManager class)
     private final AudioPlayerManager audioPlayerManager; //Manages the creation of audio players. AudioPlayerManager is a class from lavaplayer.
     private Map<Guild, List<AudioTrack>> loadedTracks = new HashMap<>();
+    //private static final Logger logger = LoggerFactory.getLogger(CmdPlay.class);
+
 
     //Constructor of the class
     public PlayerManager() {
+        //logger.info("Initializing PlayerManager...");
         this.musicManagers = new HashMap<>();
         this.audioPlayerManager = new DefaultAudioPlayerManager();
 
         AudioSourceManagers.registerRemoteSources(this.audioPlayerManager);  //Registering supported remote sources
         AudioSourceManagers.registerLocalSource(this.audioPlayerManager);   //Registering supported local sources.
+        //logger.info("PlayerManager initialized.");
     }
 
     /*
@@ -42,6 +49,7 @@ public class PlayerManager {
     audio manager to the send handler of the GuildMusicManager, and returns the new GuildMusicManager object.
      */
     public GuildMusicManager getMusicManager(Guild guild) {
+        //logger.info("Fetching GuildMusicManager for Guild ID: " + guild.getId());
         return this.musicManagers.computeIfAbsent(guild.getIdLong(), (guildId) -> {
             final GuildMusicManager guildMusicManager = new GuildMusicManager(this.audioPlayerManager);
             guild.getAudioManager().setSendingHandler(guildMusicManager.getSendHandler());
@@ -53,9 +61,9 @@ public class PlayerManager {
     This method loads an audio track or playlist from the given trackURL and adds it to the queue of the GuildMusicManager object for the guild associated with the given textChannel
      */
     public void loadAndPlay(TextChannel textChannel, String trackURL, SlashCommandInteractionEvent event) {
-
+        //logger.info("Loading and playing track from URL: " + trackURL);
         final GuildMusicManager musicManager = this.getMusicManager(textChannel.getGuild());
-        event.deferReply().queue();
+
         this.audioPlayerManager.loadItemOrdered(musicManager, trackURL, new AudioLoadResultHandler() { //loads the audio track or playlist and passes it to an AudioLoadResultHandler.
             @Override
             public void trackLoaded(AudioTrack audioTrack) {
@@ -83,12 +91,13 @@ public class PlayerManager {
             }
             @Override
             public void noMatches() {
+                event.getHook().sendMessage("No matches found for the provided input.").queue();
 
             }
 
             @Override
             public void loadFailed(FriendlyException e) {
-
+                event.getHook().sendMessage("Failed to load: " + e.getMessage()).queue();
                 event.getHook().sendMessage("Failed to load");
             }
         });

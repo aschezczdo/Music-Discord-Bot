@@ -15,10 +15,9 @@ import java.util.List;
 public class SkipCmd extends ListenerAdapter {
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         List<AudioTrack> tracks = PlayerManager.getINSTANCE().getMusicManager(event.getGuild()).scheduler.getQueue();
-        event.deferReply().queue();
         final User self = event.getJDA().getSelfUser();
         if (event.getFullCommandName().equals("skip")) {
-
+            event.deferReply().queue();
             final Member member = event.getMember();
             final GuildVoiceState memberVoiceState = event.getMember().getVoiceState();
 

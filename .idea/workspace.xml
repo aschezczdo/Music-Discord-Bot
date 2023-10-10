@@ -9,13 +9,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" afterDir="false" />
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="Updated bot to 1.0.1&#10;&#10;Fixed some bugs">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Config.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,7 +46,6 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="jar://$PROJECT_DIR$/../../../../../../Program Files/Java/jdk-19/lib/src.zip!/java.base/java/lang/String.java" root0="SKIP_INSPECTION" />
     <setting file="jar://$MAVEN_REPOSITORY$/net/dv8tion/JDA/5.0.0-beta.3/JDA-5.0.0-beta.3.jar!/net/dv8tion/jda/api/events/interaction/command/GenericCommandInteractionEvent.class" root0="SKIP_INSPECTION" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -63,25 +64,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Administrator/Desktop/Java Projects/MusicBot/Music-Discord-Bot&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.41609195&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;discord-application&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Administrator/Desktop/Java Projects/MusicBot/Music-Discord-Bot",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.41609195",
+    "settings.editor.selected.configurable": "discord-application",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="yasu.Main" />
@@ -145,6 +146,8 @@
       <workItem from="1677193487841" duration="2027000" />
       <workItem from="1677285112652" duration="206000" />
       <workItem from="1678135625080" duration="3335000" />
+      <workItem from="1687205594852" duration="979000" />
+      <workItem from="1696932006481" duration="5846000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
