@@ -97,6 +97,11 @@ public class PlayerManager {
                 } else { // It's a playlist
                     for (AudioTrack track : tracks) {
                         musicManager.scheduler.queue(track);
+                        try {
+                            Thread.sleep(500); // 500 milliseconds = 0.5 seconds
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                     event.getHook().sendMessage("Added " + tracks.size() + " tracks from the playlist to the queue.").queue();
                 }

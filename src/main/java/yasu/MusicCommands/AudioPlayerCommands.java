@@ -19,6 +19,7 @@ import yasu.lavaplayer.TrackScheduler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class AudioPlayerCommands extends ListenerAdapter {
@@ -80,7 +81,14 @@ public class AudioPlayerCommands extends ListenerAdapter {
             event.getHook().sendMessage("Bot had been disconnected from VC").queue();
         } else if (event.getFullCommandName().contains("playingnow")) {
             event.reply("**Playing now: **" + trackScheduler.playingNow()).queue();
-
+        }else if (event.getFullCommandName().contains("shuffle")) {
+            event.deferReply().queue();
+            if (tracks.isEmpty()) {
+                event.getHook().sendMessage("There are no tracks in the queue to shuffle.").queue();
+            } else {
+                trackScheduler.shuffleQueue();
+                event.getHook().sendMessage("The queue has been shuffled!").queue();
+            }
         }
 
     }
@@ -100,6 +108,7 @@ public class AudioPlayerCommands extends ListenerAdapter {
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
         commandList.add(Commands.slash("disconnect", "disconnect bot from the VC"));
         commandList.add(Commands.slash("playingnow", "Shows track that is playing now"));
+        commandList.add(Commands.slash("shuffle","Randomize the queue"));
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();
 

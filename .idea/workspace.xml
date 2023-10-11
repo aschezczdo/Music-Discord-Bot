@@ -9,11 +9,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="Fixed Playlists and YT Searches">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,7 +146,7 @@
       <workItem from="1696932006481" duration="6525000" />
       <workItem from="1696940974237" duration="2160000" />
       <workItem from="1697037095735" duration="4042000" />
-      <workItem from="1697044323575" duration="2893000" />
+      <workItem from="1697044323575" duration="4087000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -351,7 +351,14 @@
       <option name="project" value="LOCAL" />
       <updated>1697045131888</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Fixed Playlists and YT Searches">
+      <created>1697051475520</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1697051475520</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,6 +383,7 @@
     <MESSAGE value="Updated Laravel Version" />
     <MESSAGE value="Added YT Search&#10;Added playlists support" />
     <MESSAGE value="Added option to skip more than one track" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added option to skip more than one track" />
+    <MESSAGE value="Fixed Playlists and YT Searches" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed Playlists and YT Searches" />
   </component>
 </project>

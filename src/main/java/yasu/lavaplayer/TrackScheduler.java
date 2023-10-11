@@ -11,6 +11,7 @@ import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEve
 import org.w3c.dom.Text;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
@@ -49,6 +50,14 @@ public class    TrackScheduler extends AudioEventAdapter {
         this.audioPlayer.startTrack(this.queue.poll(), false);
         audioPlayer.getPlayingTrack();
     }
+    public void shuffleQueue() {
+        List<AudioTrack> list = new ArrayList<>(queue);
+        Collections.shuffle(list);
+        queue.clear();
+        queue.addAll(list);
+    }
+
+
 
     public void setVolume(int i) {
         if (i > 0 && i < 100) {
