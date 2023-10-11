@@ -10,6 +10,9 @@ import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import net.dv8tion.jda.api.managers.AudioManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
+
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.List;
 import java.util.Objects;
 import org.slf4j.Logger;
@@ -37,10 +40,19 @@ public class CmdPlay extends ListenerAdapter {
             }
             List<OptionMapping> option1 = event.getOptions(); //We store the Link passed by the user
             String link = option1.get(0).getAsString();
-
+            if(!isUrl(link)){
+                link="ytsearch:" + link + "audio";
+            }
             TextChannel textChannel = event.getChannel().asTextChannel();
             PlayerManager.getINSTANCE().loadAndPlay(textChannel, link,event); //We load the link provided to the loadAndPlay method
-        // m -> bot.getPlayerManager().loadItemOrdered(event.getGuild(), searchPrefix + event.getArgs(), new ResultHandler(m,event))); --> to search function(?)
+    }
+    public boolean isUrl(String url){
+        try{
+            new URI(url);
+            return true;
+        }catch  (URISyntaxException e){
+            return false;
+        }
     }
 
     //Auto disconnects bot if it's alone

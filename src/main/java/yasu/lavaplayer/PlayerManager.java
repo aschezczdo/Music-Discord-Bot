@@ -85,8 +85,10 @@ public class PlayerManager {
             public void playlistLoaded(AudioPlaylist audioPlaylist) {
                 final List<AudioTrack> tracks = audioPlaylist.getTracks();
                 if (!tracks.isEmpty()) {
-                    musicManager.scheduler.queue(tracks.get(0)); //If tracks isnt empty it takes track index 0 from tracks list
-                    event.getHook().sendMessage("Adding to queue: " + tracks.get(0).getInfo().title + " **by ** " + tracks.get(0).getInfo().author).queue();
+                    for (AudioTrack track : tracks) {
+                        musicManager.scheduler.queue(track);
+                        event.getHook().sendMessage("Adding to queue: " + track.getInfo().title + " **by ** " + track.getInfo().author).queue();
+                    }
                 }
             }
             @Override

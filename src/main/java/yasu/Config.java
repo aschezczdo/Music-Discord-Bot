@@ -9,7 +9,7 @@ public class Config {
 
     static {
         try {
-                properties.load(new FileInputStream("config.properties"));
+                properties.load(new FileInputStream("C:\\Users\\Administrator\\Desktop\\Java Projects\\Music-Discord-Bot\\src\\main\\java\\yasu\\config.properties"));
 
         } catch (IOException e) {
             e.printStackTrace();
