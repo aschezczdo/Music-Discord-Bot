@@ -3,13 +3,13 @@ Music Discord Bot made in Java.
 This bot had been developed with JDA 5.0 using lavaplayer for audio stuff.
 
 Play your own music from any of this providers:
-*YouTube
-*SoundCloud
-*Bandcamp
-*Vimeo
-*Twitch streams
-*Local files
-*HTTP URLs
+* Youtube
+* Soundcloud
+* Bandcamp
+* Vimeoe
+* Twitch streams
+* HTTP URLs
+
 
 It has some Music Commands such as:
 * /Play <url> --> Play any track. It automatically add it to a queue if there're already any track being played. You can use /play NAME_SONG too
