@@ -87,6 +87,7 @@ public class PlayerManager {
                 if (!tracks.isEmpty()) {
                     for (AudioTrack track : tracks) {
                         musicManager.scheduler.queue(track);
+
                         event.getHook().sendMessage("Adding to queue: " + track.getInfo().title + " **by ** " + track.getInfo().author).queue();
                     }
                 }

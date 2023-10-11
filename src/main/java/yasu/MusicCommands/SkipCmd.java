@@ -32,10 +32,20 @@ public class SkipCmd extends ListenerAdapter {
                 event.getHook().sendMessage("There is no track playing currently.").queue();
                 return;
             }
-            musicManager.scheduler.nextTrack();
-            event.getHook().sendMessage("Skipped the current track. Now playing **`" + musicManager.audioPlayer.getPlayingTrack().getInfo().title + "`** by **`" + musicManager.audioPlayer.getPlayingTrack().getInfo().author + "`**.").queue();
 
+            // Extract the number of tracks to skip from the event
+            int tracksToSkip = Integer.parseInt(event.getOption("count").getAsString()); // Assuming the argument's name is "count"
+
+            if (tracks.size() < tracksToSkip) {
+                event.getHook().sendMessage("There are not this many tracks in queue.").queue();
+                return;
+            }
+
+            for (int i = 0; i < tracksToSkip; i++) {
+                musicManager.scheduler.nextTrack();
+            }
+
+            event.getHook().sendMessage("Skipped " + tracksToSkip + " tracks. Now playing **`" + musicManager.audioPlayer.getPlayingTrack().getInfo().title + "`** by **`" + musicManager.audioPlayer.getPlayingTrack().getInfo().author + "`**.").queue();
         }
     }
-
 }

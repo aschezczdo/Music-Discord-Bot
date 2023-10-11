@@ -91,7 +91,8 @@ public class AudioPlayerCommands extends ListenerAdapter {
         //Adding commands to the list
         OptionData option1 = new OptionData(OptionType.STRING, "song", "link your song", true);
         commandList.add(Commands.slash("play", "Play a song").addOptions(option1));
-        commandList.add(Commands.slash("skip", "Skip the current song"));
+        OptionData option3 = new OptionData(OptionType.INTEGER,"count","Set how many tracks do u want to skip");
+        commandList.add(Commands.slash("skip", "Skip the current song").addOptions(option3));
         commandList.add(Commands.slash("playpause", "Play / Pause the current track"));
         OptionData option2 = new OptionData(OptionType.INTEGER, "volume", "Set the volume of the bot. 0-100", true);
         commandList.add(Commands.slash("volume", "set a volume!").addOptions(option2));
