@@ -12,7 +12,7 @@ Play your own music from any of this providers:
 *HTTP URLs
 
 It has some Music Commands such as:
-* /Play <url> OR <SongName> --> Play any track. It automatically add it to a queue if there're already any track being played
+* /Play <url> --> Play any track. It automatically add it to a queue if there're already any track being played. You can use /play NAME_SONG too
 * /Skip <amount> --> Skip to the next track
 * /Disconnect --> Disconnect bot from any VC
 * /Playpause --> Play / Pause the current track
