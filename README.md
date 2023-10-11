@@ -1,6 +1,6 @@
-Simple Discord Bot made in Java. 
+Music Discord Bot made in Java. 
 
-This bot had been developed with JDA 5.0.
+This bot had been developed with JDA 5.0 using lavaplayer for audio stuff.
 
 It has some Music Commands such as:
 * /Play <url> --> Play any track. It automatically add it to a queue if there're already any track being played
