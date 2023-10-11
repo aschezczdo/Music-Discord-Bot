@@ -16,6 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -85,11 +87,9 @@ public class PlayerManager {
             public void playlistLoaded(AudioPlaylist audioPlaylist) {
                 final List<AudioTrack> tracks = audioPlaylist.getTracks();
                 if (!tracks.isEmpty()) {
-                    for (AudioTrack track : tracks) {
-                        musicManager.scheduler.queue(track);
+                    musicManager.scheduler.queue(tracks.get(0));
 
-                        event.getHook().sendMessage("Adding to queue: " + track.getInfo().title + " **by ** " + track.getInfo().author).queue();
-                    }
+                    event.getHook().sendMessage("Adding to queue: " + tracks.get(0).getInfo().title + " **by ** " + tracks.get(0).getInfo().author).queue();
                 }
             }
             @Override
@@ -106,7 +106,14 @@ public class PlayerManager {
         });
 
     }
-
+    public boolean isUrl(String url){
+        try{
+            new URI(url);
+            return true;
+        }catch  (URISyntaxException e){
+            return false;
+        }
+    }
     public static PlayerManager getINSTANCE() {
         if (INSTANCE == null) {
             INSTANCE = new PlayerManager();
