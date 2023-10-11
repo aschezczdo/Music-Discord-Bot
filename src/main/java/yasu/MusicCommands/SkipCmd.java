@@ -7,6 +7,7 @@ import net.dv8tion.jda.api.entities.Member;
 import net.dv8tion.jda.api.entities.User;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 
@@ -33,8 +34,13 @@ public class SkipCmd extends ListenerAdapter {
                 return;
             }
 
-            // Extract the number of tracks to skip from the event
-            int tracksToSkip = Integer.parseInt(event.getOption("count").getAsString()); // Assuming the argument's name is "count"
+            // Check if "count" option is null. If it is, set tracksToSkip to 1, else parse the option.
+            int tracksToSkip;
+            if (event.getOption("count") == null) {
+                tracksToSkip = 1;
+            } else {
+                tracksToSkip = Integer.parseInt(event.getOption("count").getAsString());
+            }
 
             if (tracks.size() < tracksToSkip) {
                 event.getHook().sendMessage("There are not this many tracks in queue.").queue();

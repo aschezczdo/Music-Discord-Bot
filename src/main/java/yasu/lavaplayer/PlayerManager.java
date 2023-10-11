@@ -12,6 +12,7 @@ import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
+import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -86,12 +87,21 @@ public class PlayerManager {
             @Override
             public void playlistLoaded(AudioPlaylist audioPlaylist) {
                 final List<AudioTrack> tracks = audioPlaylist.getTracks();
-                if (!tracks.isEmpty()) {
-                    musicManager.scheduler.queue(tracks.get(0));
 
-                    event.getHook().sendMessage("Adding to queue: " + tracks.get(0).getInfo().title + " **by ** " + tracks.get(0).getInfo().author).queue();
+                // Check if it's a search result or a playlist
+                if (audioPlaylist.isSearchResult()) {
+                    if (!tracks.isEmpty()) {
+                        musicManager.scheduler.queue(tracks.get(0));
+                        event.getHook().sendMessage("Adding to queue: " + tracks.get(0).getInfo().title + " **by ** " + tracks.get(0).getInfo().author).queue();
+                    }
+                } else { // It's a playlist
+                    for (AudioTrack track : tracks) {
+                        musicManager.scheduler.queue(track);
+                    }
+                    event.getHook().sendMessage("Added " + tracks.size() + " tracks from the playlist to the queue.").queue();
                 }
             }
+
             @Override
             public void noMatches() {
                 event.getHook().sendMessage("No matches found for the provided input.").queue();
@@ -106,14 +116,7 @@ public class PlayerManager {
         });
 
     }
-    public boolean isUrl(String url){
-        try{
-            new URI(url);
-            return true;
-        }catch  (URISyntaxException e){
-            return false;
-        }
-    }
+
     public static PlayerManager getINSTANCE() {
         if (INSTANCE == null) {
             INSTANCE = new PlayerManager();
