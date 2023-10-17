@@ -10,7 +10,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Config.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/AudioPlayerSendHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/AudioPlayerSendHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logback.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/logback.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,6 +161,14 @@
       <workItem from="1696940974237" duration="2160000" />
       <workItem from="1697037095735" duration="4042000" />
       <workItem from="1697044323575" duration="4145000" />
+      <workItem from="1697490900406" duration="135000" />
+      <workItem from="1697491646488" duration="1150000" />
+      <workItem from="1697493181663" duration="1269000" />
+      <workItem from="1697494838661" duration="56000" />
+      <workItem from="1697497146978" duration="121000" />
+      <workItem from="1697497291395" duration="228000" />
+      <workItem from="1697497723510" duration="40000" />
+      <workItem from="1697583155241" duration="156000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
