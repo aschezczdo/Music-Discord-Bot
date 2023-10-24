@@ -9,12 +9,14 @@ import com.sedmelluq.discord.lavaplayer.tools.FriendlyException;
 import com.sedmelluq.discord.lavaplayer.track.AudioPlaylist;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
+import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
 import net.dv8tion.jda.api.entities.channel.concrete.TextChannel;
 import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.interactions.commands.OptionMapping;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import yasu.Main;
 
 
 import java.net.URI;
@@ -28,11 +30,12 @@ This class is responsible for managing the audio players for each guild in your 
  */
 public class PlayerManager {
 
-    private static PlayerManager INSTANCE; //It creates one PlayerManager Instance. Only one holds all programm
+    public static PlayerManager INSTANCE; //It creates one PlayerManager Instance. Only one holds all programm
     private final Map<Long, GuildMusicManager> musicManagers; //Maps each guild to the corresponding "GuildMusicManager" Object. (GuildMusicManager class)
     private final AudioPlayerManager audioPlayerManager; //Manages the creation of audio players. AudioPlayerManager is a class from lavaplayer.
     private Map<Guild, List<AudioTrack>> loadedTracks = new HashMap<>();
     //private static final Logger logger = LoggerFactory.getLogger(CmdPlay.class);
+    public static String guildId = "1074309101787557909";
 
 
     //Constructor of the class
@@ -40,10 +43,15 @@ public class PlayerManager {
         //logger.info("Initializing PlayerManager...");
         this.musicManagers = new HashMap<>();
         this.audioPlayerManager = new DefaultAudioPlayerManager();
-
         AudioSourceManagers.registerRemoteSources(this.audioPlayerManager);  //Registering supported remote sources
         AudioSourceManagers.registerLocalSource(this.audioPlayerManager);   //Registering supported local sources.
         //logger.info("PlayerManager initialized.");
+    }
+    public static synchronized PlayerManager getInstance() {
+        if (INSTANCE == null) {
+            INSTANCE = new PlayerManager();
+        }
+        return INSTANCE;
     }
 
     /*
@@ -121,6 +129,7 @@ public class PlayerManager {
         });
 
     }
+
 
     public static PlayerManager getINSTANCE() {
         if (INSTANCE == null) {

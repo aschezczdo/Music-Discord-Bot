@@ -34,5 +34,10 @@ public class GuildMusicManager {
     public AudioPlayerSendHandler getSendHandler() {
 
         return this.sendHandler;
+
+    }
+
+    public AudioPlayer getAudioPlayer() {
+        return audioPlayer;
     }
 }

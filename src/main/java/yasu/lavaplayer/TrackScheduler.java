@@ -21,7 +21,6 @@ This class is  used to manage the queue and play tracks.
 It has two parameters. AudioPlayer & Queue.
  */
 public class    TrackScheduler extends AudioEventAdapter {
-    private Guild guild;
     public final AudioPlayer audioPlayer; //Audio reproductor
     public final BlockingQueue<AudioTrack> queue; //Queue of song
     TextChannel textChannel;
@@ -50,6 +49,12 @@ public class    TrackScheduler extends AudioEventAdapter {
         this.audioPlayer.startTrack(this.queue.poll(), false);
         audioPlayer.getPlayingTrack();
     }
+    public void prevTrack(String url) {
+        this.audioPlayer.startTrack(this.queue.poll(), false);
+        audioPlayer.getPlayingTrack();
+    }
+
+
     public void shuffleQueue() {
         List<AudioTrack> list = new ArrayList<>(queue);
         Collections.shuffle(list);
