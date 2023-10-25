@@ -37,7 +37,7 @@ public class CmdPlay extends ListenerAdapter {
         Guild guild = event.getGuild();
         if (!event.getMember().getVoiceState().inAudioChannel()) { //Checks if use its in a voice channel
             //logger.warn("Member not in voice channel.");
-            event.reply("You need to be in a voice channel to use this command").queue();
+            event.getHook().sendMessage("You need to be in a voice channel to use this command").queue();
             return;
         }
         if (!guild.getSelfMember().getVoiceState().inAudioChannel()) { //We check if bot is already in a voice channel, if not we connect it to the VC

@@ -12,16 +12,19 @@ import yasu.MusicCommands.AudioPlayerCommands;
 import yasu.MusicCommands.CmdPlay;
 import yasu.MusicCommands.SkipCmd;
 import yasu.api.Api;
-//import yasu.lavaplayer.CmdPlay;
+
 
 
 public class Main {
     public static JDA bot;
     public static void main(String args[]) throws InterruptedException {
+
         try {
+            //System.out.println(new File(".").getAbsolutePath());
+
             // Creating the bot (default config)x
             bot = JDABuilder.createDefault(Config.getDiscordApiToken())
-                    .setActivity(Activity.playing("with your mom"))
+                    .setActivity(Activity.playing("Dashboard: https//music-dash.vercel.app"))
                     .setStatus(OnlineStatus.ONLINE)
                     .enableCache(CacheFlag.VOICE_STATE)
                     .enableIntents(GatewayIntent.GUILD_MESSAGES, GatewayIntent.GUILD_MEMBERS, GatewayIntent.GUILD_WEBHOOKS, GatewayIntent.MESSAGE_CONTENT)

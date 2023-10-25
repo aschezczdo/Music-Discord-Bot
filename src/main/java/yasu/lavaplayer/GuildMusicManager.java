@@ -37,7 +37,7 @@ public class GuildMusicManager {
 
     }
 
-    public AudioPlayer getAudioPlayer() {
+    public  AudioPlayer getAudioPlayer() {
         return audioPlayer;
     }
 }

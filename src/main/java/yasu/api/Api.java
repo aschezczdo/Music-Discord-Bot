@@ -3,6 +3,7 @@ package yasu.api;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.util.JSONPObject;
+import com.sedmelluq.discord.lavaplayer.player.AudioPlayer;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrack;
 import com.sedmelluq.discord.lavaplayer.track.AudioTrackInfo;
 import io.javalin.Javalin;
@@ -10,7 +11,9 @@ import io.javalin.http.Context;
 import io.javalin.http.Header;
 import net.dv8tion.jda.api.JDA;
 import net.dv8tion.jda.api.entities.Guild;
+import org.json.JSONObject;
 import yasu.Main;
+import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.Song;
 import yasu.lavaplayer.TrackScheduler;
@@ -40,6 +43,23 @@ public class Api {
         app.get("/bot/status", Api::returnStatus);
         app.get("/bot/queue", Api::fetchQueue);
         app.post("/bot/prevtrack", Api::previousTrack);
+        app.post("bot/nextsong",Api::nextTrack);
+        app.delete("bot/queue", Api::deleteQueue);
+    }
+
+    public static void deleteQueue(Context ctx) {
+        JSONObject jo = new JSONObject(
+                ctx.body()
+        );
+        int position = jo.getInt("position");
+
+        System.out.println(position);
+
+        JDA botInstance = Main.bot;
+        Guild guild = botInstance.getGuildById(guildId2);
+        TrackScheduler trackScheduler = PlayerManager.getINSTANCE().getMusicManager(guild).scheduler;
+        trackScheduler.removeTrack(position);
+
     }
 
     public static void fetchQueue(Context ctx) {
@@ -72,7 +92,6 @@ public class Api {
 
 
     private static void handlePlayPauseCommand(Context ctx) {
-        System.out.println("handlePlayPauseCommand invoked");
         JDA botInstance = Main.bot;
         // Extract the guild ID or any other necessary information from the request
         Guild guild = botInstance.getGuildById(guildId2);
@@ -111,22 +130,40 @@ public class Api {
      */
 
     public static void previousTrack(Context ctx) {
-        try {
-            String requestBody = ctx.body();
+        System.out.println("previoustrack invoked");
+        JDA botInstance = Main.bot;
+        Guild guild = botInstance.getGuildById(guildId2);
+        final GuildMusicManager musicManager = PlayerManager.getINSTANCE().getMusicManager(guild);
+        final AudioPlayer audioPlayer = musicManager.audioPlayer;
+        musicManager.scheduler.prevTrack();
 
-            ObjectMapper mapper = new ObjectMapper();
-            Song track = mapper.readValue(requestBody, Song.class);
+        if(!musicManager.scheduler.queue.isEmpty()){
+            ctx.result("Successfully changed the track");
 
-            PlayerManager playerManager = PlayerManager.getInstance();
+        }else{
+            ctx.result("Queue is empty");
 
-            //playerManager.loadAndPlay2(track.uri);
-            // For demonstration, let's just respond with the received track
-            ctx.json(track);
-;
-        } catch (Exception e) {
-            System.out.println(e);
-            ctx.status(400).result("Invalid JSON format provided");
         }
+        ctx.status(200).result("Track processed successfully");
+
+
+
+        ctx.status(400).result("Invalid JSON format provided or an error occurred while playing the track");
+
+    }
+    public static void nextTrack(Context ctx){
+        JDA botInstance = Main.bot;
+        Guild guild = botInstance.getGuildById(guildId2);
+        final GuildMusicManager musicManager = PlayerManager.getINSTANCE().getMusicManager(guild);
+        final AudioPlayer audioPlayer = musicManager.audioPlayer;
+        musicManager.scheduler.nextTrack();
+        if(!musicManager.scheduler.queue.isEmpty()){
+            ctx.result("Successfully changed the track");
+        }else{
+            ctx.result("Queue is empty");
+        }
+
+
     }
 
 }

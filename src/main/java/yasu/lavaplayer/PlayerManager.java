@@ -67,10 +67,6 @@ public class PlayerManager {
             return guildMusicManager;
         });
     }
-
-    /*
-    This method loads an audio track or playlist from the given trackURL and adds it to the queue of the GuildMusicManager object for the guild associated with the given textChannel
-     */
     public void loadAndPlay(TextChannel textChannel, String trackURL, SlashCommandInteractionEvent event) {
         //logger.info("Loading and playing track from URL: " + trackURL);
         final GuildMusicManager musicManager = this.getMusicManager(textChannel.getGuild());
