@@ -17,6 +17,10 @@ import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.Song;
 import yasu.lavaplayer.TrackScheduler;
+
+import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -163,6 +167,35 @@ public class Api {
             ctx.result("Queue is empty");
         }
 
+    }
+    public static boolean registerUser(String username, String password) {
+        try {
+            URL url = new URL("https://music-dash.vercel.app/api/discord/createaccount");
+            HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+            httpURLConnection.setRequestMethod("PUT");
+            httpURLConnection.setRequestProperty("Content-Type", "application/json; utf-8");
+            httpURLConnection.setRequestProperty("Authorization", "12345");
+            httpURLConnection.setDoOutput(true);
+
+            String jsonPayload = String.format("{\"username\":\"%s\", \"password\":\"%s\"}", username, password);
+            // Send the request
+            try (OutputStream os = httpURLConnection.getOutputStream()) {
+                byte[] input = jsonPayload.getBytes("utf-8");
+                os.write(input, 0, input.length);
+            }
+            int responseCode = httpURLConnection.getResponseCode();
+            if (responseCode == 200) {
+                System.out.println("Register success");
+                return true;
+            }else{
+                System.out.println("Register failed with response code: " +responseCode);
+                return false;
+            }
+
+        } catch (Exception e) {
+            System.out.println("Register failed because an error: " + e);
+            return false;
+        }
 
     }
 

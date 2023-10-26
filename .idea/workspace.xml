@@ -9,19 +9,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="">
+    <list default="true" id="00ada5f7-2c84-434f-bab5-3331a014151a" name="Changes" comment="Api">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/AudioPlayerCommands.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/CmdPlay.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/MusicCommands/SkipCmd.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/yasu/api/Api.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/api/Api.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/AudioPlayerSendHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/AudioPlayerSendHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/GuildMusicManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/PlayerManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/yasu/lavaplayer/TrackScheduler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -87,6 +78,11 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\Desktop\Java Projects\Music-Discord-Bot" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="yasu.Main" />
@@ -172,7 +168,8 @@
       <workItem from="1698118458741" duration="9873000" />
       <workItem from="1698132786298" duration="979000" />
       <workItem from="1698139162071" duration="134000" />
-      <workItem from="1698261915793" duration="68000" />
+      <workItem from="1698261915793" duration="2203000" />
+      <workItem from="1698275529403" duration="3626000" />
     </task>
     <task id="LOCAL-00001" summary="First Commit">
       <created>1676504998943</created>
@@ -412,7 +409,14 @@
       <option name="project" value="LOCAL" />
       <updated>1698139290812</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="Api">
+      <created>1698262123897</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1698262123897</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,11 +13,14 @@ import net.dv8tion.jda.api.interactions.commands.OptionType;
 import net.dv8tion.jda.api.interactions.commands.build.CommandData;
 import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
+import yasu.api.Api;
 import yasu.lavaplayer.GuildMusicManager;
 import yasu.lavaplayer.PlayerManager;
 import yasu.lavaplayer.TrackScheduler;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+
+import javax.swing.text.html.Option;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -89,6 +92,18 @@ public class AudioPlayerCommands extends ListenerAdapter {
                 trackScheduler.shuffleQueue();
                 event.getHook().sendMessage("The queue has been shuffled!").queue();
             }
+        }else if (event.getFullCommandName().contains("register")){
+            event.deferReply().queue();
+            String username = event.getOption("username").getAsString();
+            String password = event.getOption("password").getAsString();
+            boolean registersuccess = Api.registerUser(username,password);
+            if(registersuccess == true){
+                event.getHook().sendMessage("User registered successfully! \n **Welcome: " + username + "**").queue();
+            }else{
+                event.getHook().sendMessage("An error ocurred while registering!.").queue();
+            }
+
+
         }
 
     }
@@ -103,12 +118,15 @@ public class AudioPlayerCommands extends ListenerAdapter {
         commandList.add(Commands.slash("skip", "Skip the current song").addOptions(option3));
         commandList.add(Commands.slash("playpause", "Play / Pause the current track"));
         OptionData option2 = new OptionData(OptionType.INTEGER, "volume", "Set the volume of the bot. 0-100", true);
+        OptionData username = new OptionData(OptionType.STRING, "username","Set the username of your account",true);
+        OptionData password = new OptionData(OptionType.STRING, "password","Type your password for the account",true);
         commandList.add(Commands.slash("volume", "set a volume!").addOptions(option2));
         commandList.add(Commands.slash("queue", "List all tracks in queue"));
         commandList.add(Commands.slash("clear", "Clear all tracks in the queue"));
         commandList.add(Commands.slash("disconnect", "disconnect bot from the VC"));
         commandList.add(Commands.slash("playingnow", "Shows track that is playing now"));
         commandList.add(Commands.slash("shuffle","Randomize the queue"));
+        commandList.add(Commands.slash("register" ,"Register your user in the database").addOptions(username,password));
         //Registering commandList to JDA API (bot)
         event.getGuild().updateCommands().addCommands(commandList).queue();
 
